@@ -121,7 +121,6 @@ The model achieved approximately:
 
 * Scikit-learn
 * Logistic Regression
-* Random Forest
 * K-Means Clustering
 * Train/Test Split
 * Feature Scaling
