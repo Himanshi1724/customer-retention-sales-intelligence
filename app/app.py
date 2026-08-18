@@ -43,17 +43,28 @@ feature_names = joblib.load(
 # -----------------------------
 # TITLE
 # -----------------------------
-st.title("AI-Powered Customer Retention & Sales Intelligence Platform")
+st.title("📊 Customer Retention & Sales Intelligence")
 
-st.write(
-    "Analyze customer behavior, identify customer segments, "
-    "and predict the probability of repeat purchases within the next 90 days."
+st.markdown(
+    """
+    ### Turn customer behavior into actionable business insights
+
+    This platform uses **RFM analysis, customer segmentation, and machine learning**
+    to understand customer behavior and predict the likelihood of a repeat purchase
+    within the next **90 days**.
+    """
 )
+
+st.divider()
+
 
 # -----------------------------
 # SIDEBAR
 # -----------------------------
-st.sidebar.title("Navigation")
+st.sidebar.title("📊 Navigation")
+st.sidebar.markdown("---")
+st.sidebar.caption("Customer Retention Intelligence Platform")
+
 
 page = st.sidebar.radio(
     "Go to",
@@ -79,13 +90,16 @@ if page == "Project Overview":
     next 90 days.
     """)
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.metric("Final Model", "Logistic Regression")
+        st.metric("🤖 Final Model", "Logistic Regression")
 
     with col2:
-        st.metric("Model Accuracy", "65.8%")
+        st.metric("🎯 Model Accuracy", "65.8%")
+
+    with col3:
+        st.metric("📅 Prediction Window", "90 Days")
 
     st.subheader("Key Techniques Used")
 
@@ -196,9 +210,21 @@ elif page == "Repeat Purchase Prediction":
             )
 
         st.metric(
-            "Repeat Purchase Probability",
-            f"{probability * 100:.2f}%"
-        )
+    "🎯 Repeat Purchase Probability",
+    f"{probability * 100:.2f}%"
+)
+
+
+    
+        st.progress(float(probability))
+
+        if probability >= 0.70:
+            st.success("🟢 High retention potential")
+        elif probability >= 0.40:
+            st.warning("🟡 Medium retention potential")
+        else:
+            st.error("🔴 Low retention potential")
+        
 
 # -----------------------------
 # BUSINESS RECOMMENDATIONS
@@ -221,8 +247,20 @@ elif page == "Business Recommendations":
             "Launch win-back campaigns and personalized discount offers."
     }
 
-    for segment, recommendation in recommendations.items():
+    col1, col2 = st.columns(2)
 
-        st.subheader(segment)
+    segments = list(recommendations.items())
 
-        st.write(recommendation)
+    with col1:
+        st.info(f"⭐ {segments[0][0]}")
+        st.write(segments[0][1])
+
+        st.info(f"🟢 {segments[2][0]}")
+        st.write(segments[2][1])
+
+    with col2:
+        st.info(f"💎 {segments[1][0]}")
+        st.write(segments[1][1])
+
+        st.warning(f"⚠️ {segments[3][0]}")
+        st.write(segments[3][1])

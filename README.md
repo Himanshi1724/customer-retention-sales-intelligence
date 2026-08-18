@@ -1,313 +1,367 @@
-AI-Powered Customer Retention & Sales Intelligence Platform
-📌 About the Project
+# 📊 Customer Retention Intelligence Platform
 
-This project explores customer purchasing behavior using e-commerce transaction data from the Online Retail II dataset.
+An interactive **Customer Retention & Sales Intelligence Platform** built with Python, Machine Learning, and Streamlit.
 
-The goal is not just to analyze past sales, but also to understand customer behavior and predict whether a customer is likely to make another purchase within the next 90 days.
+The project analyzes customer purchasing behavior using **RFM Analysis**, performs **customer segmentation with K-Means clustering**, and uses **Machine Learning** to predict whether a customer is likely to make a repeat purchase within the next **90 days**.
 
-Through this project, I worked on the complete data science workflow—from cleaning raw data and exploring sales patterns to customer segmentation and machine learning.
+---
 
-🎯 The Problem
+## 🚀 Project Overview
 
-For an e-commerce business, retaining existing customers is just as important as finding new ones.
+Customer retention is an important part of business growth. Instead of focusing only on acquiring new customers, businesses can use customer data to identify valuable customers, customers at risk of leaving, and customers who are likely to purchase again.
 
-The main question this project tries to answer is:
+This project provides a simple interactive platform that helps businesses:
 
-Can we use a customer's previous purchasing behavior to predict whether they will return and make another purchase within the next 90 days?
+* Understand customer purchasing behavior
+* Segment customers based on their characteristics
+* Identify high-value and at-risk customers
+* Predict repeat purchase probability
+* Generate business recommendations for different customer segments
 
-Answering this question can help businesses identify valuable customers, understand customers who may not return, and create better retention strategies.
+---
 
-📊 Dataset
+## 🎯 Key Features
 
-This project uses the Online Retail II dataset, which contains real transactional data from an online retail business.
+### 1. 📋 Project Overview
 
-The dataset includes information such as:
+Provides an overview of the project, its purpose, and the techniques used.
 
-Invoice Number
-Stock Code
-Product Description
-Quantity
-Invoice Date
-Unit Price
-Customer ID
-Country
-🔄 Project Workflow
+The platform highlights:
 
-The project was completed in the following steps:
+* Data Cleaning
+* Exploratory Data Analysis
+* Customer-Level Feature Engineering
+* RFM Analysis
+* K-Means Customer Segmentation
+* 90-Day Repeat Purchase Prediction
+* Machine Learning Model Comparison
 
+---
+
+### 2. 👥 Customer Segmentation
+
+Customers are divided into four business-oriented segments:
+
+* ⭐ **VIP Customers**
+* 💎 **Loyal High-Value Customers**
+* 🟢 **Regular Customers**
+* ⚠️ **At-Risk Customers**
+
+These segments can help businesses create more targeted marketing and retention strategies.
+
+---
+
+### 3. 🎯 Repeat Purchase Prediction
+
+Users can enter customer RFM information:
+
+* **Recency** – Number of days since the customer's last purchase
+* **Frequency** – Number of purchases
+* **Monetary Value** – Customer spending value
+
+The application then predicts whether the customer is likely to make another purchase within the next **90 days**.
+
+The application also displays:
+
+* Repeat purchase probability
+* Prediction result
+* Retention potential
+* Probability progress bar
+
+---
+
+### 4. 💼 Business Recommendations
+
+The platform provides practical recommendations for different customer segments.
+
+Examples include:
+
+| Customer Segment              | Recommended Strategy                                       |
+| ----------------------------- | ---------------------------------------------------------- |
+| ⭐ VIP Customers               | Provide exclusive rewards and personalized offers          |
+| 💎 Loyal High-Value Customers | Use loyalty programs and cross-selling opportunities       |
+| 🟢 Regular Customers          | Encourage repeat purchases with targeted promotions        |
+| ⚠️ At-Risk Customers          | Launch win-back campaigns and personalized discount offers |
+
+---
+
+## 🤖 Machine Learning
+
+The project uses machine learning to predict customer repeat purchases.
+
+The final model used in the application is:
+
+**Logistic Regression**
+
+The model achieved approximately:
+
+### 🎯 Model Accuracy: 65.8%
+
+> Model accuracy is based on the current train/test evaluation performed during the project. It should be interpreted as a project-level evaluation metric rather than a guarantee of real-world prediction performance.
+
+---
+
+## 🛠️ Technologies Used
+
+### Programming Language
+
+* Python
+
+### Data Analysis
+
+* Pandas
+* NumPy
+
+### Data Visualization
+
+* Matplotlib
+* Seaborn
+
+### Machine Learning
+
+* Scikit-learn
+* Logistic Regression
+* Random Forest
+* K-Means Clustering
+* Train/Test Split
+* Feature Scaling
+* Classification Metrics
+
+### Application
+
+* Streamlit
+
+### Development Tools
+
+* Jupyter Notebook
+* Visual Studio Code
+* Git
+* GitHub
+
+---
+
+## 📈 RFM Analysis
+
+RFM stands for:
+
+### Recency
+
+How recently a customer made a purchase.
+
+### Frequency
+
+How frequently a customer makes purchases.
+
+### Monetary Value
+
+How much money a customer spends.
+
+RFM analysis helps businesses understand customer value and purchasing behavior.
+
+---
+
+## 🔄 Project Workflow
+
+```text
+Raw Customer Data
+        ↓
 Data Cleaning
+        ↓
 Exploratory Data Analysis
-Feature Engineering
+        ↓
+Customer-Level Feature Engineering
+        ↓
 RFM Analysis
-Customer Segmentation using K-Means
-Creating a 90-day repeat purchase target
-Time-based Train-Test Split
-Training and comparing Machine Learning models
-Model Evaluation
-Business Insights and Recommendations
-🧹 Data Cleaning
-
-The raw dataset required several cleaning steps before analysis.
-
-This included:
+        ↓
+K-Means Customer Segmentation
+        ↓
+Train/Test Split
+        ↓
+Feature Scaling
+        ↓
+Machine Learning Model
+        ↓
+Repeat Purchase Prediction
+        ↓
+Business Recommendations
+        ↓
+Streamlit Dashboard
+```
 
-Handling missing values
-Removing duplicate records
-Removing cancelled transactions
-Removing invalid quantities and prices
-Creating a TotalAmount feature for transaction-level analysis
-📈 Exploratory Data Analysis
+---
 
-EDA was used to better understand the sales data and customer purchasing patterns.
+## 📊 Application Pages
 
-The analysis includes visualizations related to:
+The Streamlit application contains four main sections:
 
-Sales trends
-Products and purchasing behavior
-Revenue patterns
-Customer activity
-Country-level insights
+### 🏠 Project Overview
 
-A total of 10 visualizations from the analysis are saved in the visuals/ folder.
+Provides an overview of the project and the techniques used.
 
-👥 Customer Segmentation
+### 👥 Customer Segmentation
 
-To better understand different types of customers, I used RFM Analysis and K-Means Clustering.
+Displays the customer segmentation approach and customer groups.
 
-RFM represents:
+### 🎯 Repeat Purchase Prediction
 
-Recency – How recently a customer made a purchase
-Frequency – How often a customer makes purchases
-Monetary – How much a customer spends
+Allows users to enter RFM values and receive a 90-day repeat purchase prediction.
 
-Using these features, customers were grouped into different segments based on their purchasing behavior.
+### 💼 Business Recommendations
 
-🤖 Machine Learning
+Provides actionable strategies for different customer segments.
 
-The machine learning part of the project focuses on predicting whether a customer will make another purchase within the next 90 days.
+---
 
-The following classification models were trained and compared:
+## 💻 Installation
 
-Logistic Regression
-K-Nearest Neighbors (KNN)
-Decision Tree
+Clone the repository:
 
-A time-based train-test split was used so that the model is evaluated in a way that better reflects a real-world prediction scenario and helps reduce data leakage.
+```bash
+git clone https://github.com/Himanshi1724/AI_Customer_Retention_Platform.git
+```
 
-📊 Model Evaluation
+Move into the project directory:
 
-The models were evaluated using:
+```bash
+cd AI_Customer_Retention_Platform
+```
 
-Accuracy
-Precision
-Recall
-F1 Score
-Confusion Matrix
+Create a virtual environment:
 
-The results were compared to understand how well each model performed on the customer repeat-purchase prediction task.
+```bash
+python -m venv .venv
+```
 
-💡 What This Project Can Help With
+Activate the virtual environment on Windows:
 
-The insights from this project can help a business:
+```bash
+.venv\Scripts\activate
+```
 
-Identify valuable customers
-Understand customer purchasing patterns
-Identify customers who may not return
-Support targeted retention strategies
-Make more data-driven business decisions
-🛠️ Tools and Technologies
-Python
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
-Jupyter Notebook
-VS Code
-GitHub
-Streamlit
-📁 Project Structure
-AI-Customer-Retention-Sales-Intelligence/
-│
-├── app/              # Streamlit application
-├── data/             # Dataset
-├── models/           # Saved machine learning models
-├── notebooks/        # Data analysis and machine learning notebooks
-├── visuals/          # Project visualizations
-├── README.md
-└── requirements.txt
-🚀 Future Improvements
+Install the required dependencies:
 
-Some possible improvements for the project include:
+```bash
+pip install -r requirements.txt
+```
 
-Experimenting with additional machine learning models
-Improving feature engineering
-Adding more interactive visualizations
-Deploying the project as a Streamlit application
-Adding AI-generated business insights and recommendations
-👩‍💻 Author
+---
 
-Himanshi Yadav
+## ▶️ Run the Streamlit Application
 
-This version sounds more like a real person explaining what they built, instead of a generic AI-generated project description. It is still professional enough for your GitHub portfolio.
+Run:
 
-i did not want that interviw told me that you didnot make it it is ai genrated
+```bash
+streamlit run app/app.py
+```
 
-Ahh, I understand you now. You don't want the README to sound so polished that an interviewer thinks you simply generated it with AI.
+The application will open in your browser.
 
-And honestly, that's a valid concern.
+---
 
-The best approach is not to hide AI use. Instead, the README should be simple and match the work you actually did. In an interview, you should be able to explain every section, every graph, and every model.
+## 📁 Project Structure
 
-For example, instead of:
-
-“This project leverages machine learning to generate actionable insights...”
-
-Use simple language:
-
-“In this project, I analyzed customer purchase data, created RFM features, segmented customers using K-Means, and built models to predict whether a customer would purchase again within 90 days.”
-
-That sounds more natural because it directly describes your actual work.
-
-Also, if an interviewer asks about it, the important thing is that you can explain:
-
-Why you cleaned the data
-Why duplicates were handled
-What RFM means
-Why you used K-Means
-How the 90-day target was created
-Why you used a time-based train/test split
-Which models you tried and why
-What your accuracy/results mean
-
-You did work through these steps yourself, code by code. I helped guide you, but you should understand and be able to explain the project.
-
-So let's make the README shorter, simpler, and based only on exactly what is actually in your project. We should not add impressive-sounding things that you cannot demonstrate.
-
-now give me
-
-Yes. Paste this simple, natural README into your README.md. It describes the work you actually did and avoids overly fancy language.
-
-AI-Powered Customer Retention & Sales Intelligence Platform
-About the Project
-
-In this project, I worked with the Online Retail II dataset to analyze customer purchasing behavior.
-
-The project starts with cleaning the raw transaction data and exploring the dataset. After that, I created customer-level features, performed RFM analysis, and used K-Means clustering to group customers based on their purchasing behavior.
-
-The main machine learning task is to predict whether a customer will make another purchase within the next 90 days.
-
-Project Goal
-
-The goal of this project is to answer this question:
-
-Based on a customer's previous purchase behavior, can we predict whether they will purchase again within the next 90 days?
-
-The project also helps understand different customer groups and their purchasing patterns.
-
-Dataset
-
-The project uses the Online Retail II dataset.
-
-The dataset contains transaction information such as:
-
-Invoice Number
-Stock Code
-Description
-Quantity
-Invoice Date
-Unit Price
-Customer ID
-Country
-What I Did
-1. Data Cleaning
-
-I cleaned the dataset by handling issues such as:
-
-Missing values
-Duplicate records
-Cancelled transactions
-Invalid quantities and prices
-
-I also created a TotalAmount feature for sales analysis.
-
-2. Exploratory Data Analysis
-
-I explored the data to understand:
-
-Sales patterns
-Customer purchasing behavior
-Products
-Revenue
-Countries
-
-The important visualizations from the project are saved in the visuals folder.
-
-3. Customer-Level Features
-
-Transaction-level data was converted into customer-level data so that each customer could be analyzed based on their purchasing behavior.
-
-4. RFM Analysis
-
-I created three important customer features:
-
-Recency – How recently a customer made a purchase
-Frequency – How often a customer made purchases
-Monetary – How much the customer spent
-5. Customer Segmentation
-
-I used K-Means clustering to group customers with similar purchasing behavior.
-
-This helped identify different types of customers based on their RFM values.
-
-6. Repeat Purchase Prediction
-
-The machine learning task was to predict whether a customer would make another purchase within the next 90 days.
-
-A time-based approach was used for the train-test split to make the prediction setup more realistic and help avoid data leakage.
-
-7. Machine Learning Models
-
-I trained and compared:
-
-Logistic Regression
-K-Nearest Neighbors (KNN)
-Decision Tree
-8. Model Evaluation
-
-The models were evaluated using:
-
-Accuracy
-Precision
-Recall
-F1 Score
-Confusion Matrix
-Tools Used
-Python
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
-Jupyter Notebook
-VS Code
-GitHub
-Streamlit
-
-Project Structure
-AI-Customer-Retention-Sales-Intelligence/
+```text
+AI_Customer_Retention_Platform/
 │
 ├── app/
+│   └── app.py
+│
 ├── data/
-├── models/
+│   └── customer_data.csv
+│
 ├── notebooks/
-├── visuals/
+│   └── customer_retention_analysis.ipynb
+│
+├── .gitignore
 ├── README.md
-└── requirements.txt
-Key Learning
+├── requirements.txt
+└── ...
+```
 
-Through this project, I practiced working through a complete data science workflow, including data cleaning, exploratory data analysis, feature engineering, customer segmentation, machine learning, and model evaluation.
+> File names may vary depending on the final project structure.
 
-Author
+---
 
-Himanshi Yadav
+## 📌 Example Prediction
+
+For example, a customer can be evaluated using:
+
+```text
+Recency: 30 days
+Frequency: 5 purchases
+Monetary Value: 1000
+```
+
+The application generates a repeat purchase probability and classifies the customer's retention potential.
+
+For example:
+
+```text
+Repeat Purchase Probability: 74.38%
+
+🟢 High retention potential
+```
+
+The displayed probability will change according to the customer information entered into the application.
+
+---
+
+## 📚 Skills Demonstrated
+
+This project demonstrates practical experience with:
+
+* Python programming
+* Data preprocessing
+* Exploratory Data Analysis
+* Feature engineering
+* RFM analysis
+* Customer segmentation
+* K-Means clustering
+* Machine Learning
+* Classification
+* Model evaluation
+* Streamlit application development
+* Git and GitHub
+* Building an end-to-end data science project
+
+---
+
+## 🔮 Future Improvements
+
+Possible future improvements include:
+
+* Improving model performance through additional feature engineering
+* Hyperparameter tuning
+* Testing additional classification algorithms
+* Adding interactive visualizations
+* Adding customer-level prediction history
+* Adding downloadable prediction reports
+* Connecting the application to a live database
+* Adding automated model retraining
+* Deploying the application online
+
+---
+
+## 👩‍💻 Author
+
+**Himanshi**
+
+This project was developed as a practical Machine Learning and Data Science project focused on customer retention and business intelligence.
+
+---
+
+## ⭐ Conclusion
+
+The **Customer Retention Intelligence Platform** combines data analysis, customer segmentation, machine learning, and business recommendations into one interactive application.
+
+It demonstrates how customer transaction data can be transformed into meaningful insights that support **customer retention and targeted business strategies**.
+
+
+
+## 👩‍💻 Author
+
+**Himanshi**
+
+GitHub: **Himanshi1724**
+
+This project was developed as a practical **Data Science and Machine Learning project** focused on customer retention, customer segmentation, and business intelligence.
